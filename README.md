@@ -1,4 +1,5 @@
 # Clipboard serve
+![Building](https://github.com/Reyuu/clipboard-serve/workflows/Building/badge.svg)
 
 **Clipboard serve** is a simple utility that will host your clipboard over websocket, which then in turn can be captured by any application that uses websockets (for example your browser). New message will be sent upon the change that occurs in your clipboard with specified wait time between loops.
 
@@ -7,7 +8,7 @@ Format that is sent is plain-text, I **DON'T** recommend having this enabled whe
 Example HTML file that will read and display your clipboard is attached. It's mainly intended for Japanese text.
 ![image](https://user-images.githubusercontent.com/7038406/89105638-120ce400-d423-11ea-8e40-5a8e3499d213.png)
 
-Latest release can be found [here](https://github.com/Reyuu/clipboard-manager/releases/latest).
+Latest release can be found [here](https://github.com/Reyuu/clipboard-serve/releases/latest).
 
 ## Usage
 
