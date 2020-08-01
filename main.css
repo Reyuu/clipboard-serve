@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Kosugi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kosugi&family=Noto+Serif+JP&display=swap");
+html body {
+  background-color: #252525;
+}
+
+html body span {
+  position: absolute;
+  font-family: 'Kosugi', sans-serif;
+  font-size: 24px;
+  top: 35%;
+  left: 50%;
+  width: 50%;
+  -webkit-transform: translate(-50%, -35%);
+          transform: translate(-50%, -35%);
+  color: #dbdbdb;
+}
+
+html body a {
+  color: #ffc894;
+  font-weight: normal;
+  text-decoration: none;
+  cursor: default;
+}
+
+html body a:hover {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 55px;
+  text-decoration: none;
+  cursor: default;
+}
+/*# sourceMappingURL=main.css.map */

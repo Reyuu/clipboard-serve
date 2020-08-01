@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocket demo</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <script>
+            function isKanji(ch) {
+                return (ch >= "\u4e00" && ch <= "\u9faf") ||
+                (ch >= "\u3400" && ch <= "\u4dbf");
+            }
+            var ws = new WebSocket("ws://127.0.0.1:5678/"),
+            messages = document.createElement('span');
+            ws.onmessage = function (event) {
+                var messages = document.getElementsByTagName('span')[0];
+                    message = document.createElement('span');
+                    var my_data = [];
+                    console.log(event.data.length);
+                    for (var i = 0; i<event.data.length; i++){
+                        console.log("lol");
+                        if (isKanji(event.data[i])){
+                            my_data.push("<a class=\"kanji\" href=\"https://jisho.org/search/"+event.data[i]+"\">"+event.data[i]+"</a>");
+                        } else {
+                            my_data.push(event.data[i]);
+                        }
+                    }
+                    my_data = my_data.join("");
+                    message.innerHTML = my_data;
+                    messages.replaceWith(message);
+            };
+            document.body.appendChild(messages);
+        </script>
+    </body>
+</html>
