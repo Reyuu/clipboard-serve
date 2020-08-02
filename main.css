@@ -2,31 +2,79 @@
 @import url("https://fonts.googleapis.com/css2?family=Kosugi&family=Noto+Serif+JP&display=swap");
 html body {
   background-color: #252525;
+  font-family: 'Kosugi', sans-serif;
+  color: #dbdbdb;
 }
 
-html body span {
+html body span.sentence {
   position: absolute;
-  font-family: 'Kosugi', sans-serif;
   font-size: 24px;
   top: 35%;
   left: 50%;
   width: 50%;
   -webkit-transform: translate(-50%, -35%);
           transform: translate(-50%, -35%);
-  color: #dbdbdb;
 }
 
-html body a {
+html body span.sentence span.kanji {
   color: #ffc894;
   font-weight: normal;
   text-decoration: none;
   cursor: default;
 }
 
-html body a:hover {
+html body span.sentence span.kanji:hover {
   font-family: 'Noto Serif JP', serif;
   font-size: 55px;
   text-decoration: none;
   cursor: default;
+}
+
+html body .left {
+  top: 0;
+  left: 0;
+}
+
+html body .right {
+  top: 0;
+  left: 100%;
+  -webkit-transform: translate(-100%, 0%);
+          transform: translate(-100%, 0%);
+}
+
+html body div.sidebar {
+  position: relative;
+  opacity: 0.75;
+  width: 200px;
+  height: 100%;
+  background-color: #222222;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+html body div.sidebar div {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+html body div.sidebar div button.add_button {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-style: none;
+  color: #f2f2f2;
+  font-size: 18px;
+}
+
+html body div.sidebar div span:first-child {
+  color: #ffc894;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+html body div.sidebar div span:last-child {
+  padding-left: 5px;
+  font-family: 'Noto Serif JP', serif;
 }
 /*# sourceMappingURL=main.css.map */

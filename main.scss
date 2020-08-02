@@ -1,30 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kosugi&family=Noto+Serif+JP&display=swap');
+$primary: #252525;
+$font_color: #dbdbdb;
+$kanji_color: #ffc894;
+
 html{
     body{
-        background-color: #252525;
-        span{
+        background-color: $primary;
+        font-family: 'Kosugi', sans-serif;
+        color: $font_color;
+        span.sentence{
             position: absolute;
-            font-family: 'Kosugi', sans-serif;
             font-size: 24px;
             //text-align: center;
             top: 35%;
             left:50%;
             width: 50%;
             transform: translate(-50%, -35%);
-            color: #dbdbdb;
+        
+            span.kanji{
+                color: $kanji_color;
+                font-weight: normal;
+                text-decoration: none;
+                cursor: default;
+            }
+            span.kanji:hover{
+                font-family: 'Noto Serif JP', serif;
+                font-size: 55px;
+                text-decoration: none;
+                cursor: default;
+            }
         }
-        a{
-            color: #ffc894;
-            font-weight: normal;
-            text-decoration: none;
-            cursor: default;
+        .left{
+            top: 0;
+            left: 0;
         }
-        a:hover{
-            font-family: 'Noto Serif JP', serif;
-            font-size: 55px;
-            text-decoration: none;
-            cursor: default;
+        .right{
+            top: 0;
+            left: 100%;
+            transform: translate(-100%, 0%);
+        }
+        div.sidebar{
+            position: relative;
+            opacity: 0.75;
+            width: 200px;
+            height: 100%;
+            background-color: darken($color: $primary, $amount: 1);
+            line-height: 24px;
+            font-size: 16px;
+            //text-align: center;
+            
+            div{
+                margin-top: 10px;
+                margin-left: 20px;
+                button.add_button{
+                    background-color: rgba(0, 0, 0, 0);
+                    appearance: none;
+                    border-style: none;
+                    color: #f2f2f2;
+                    font-size: 18px;
+                }
+                span:first-child{
+                    color: $kanji_color;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                span:last-child{
+                    padding-left: 5px;
+                    font-family: 'Noto Serif JP', serif;
+                }
+            }
+
         }
     }
 }

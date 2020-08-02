@@ -6,10 +6,53 @@
     </head>
     <body>
         <script>
+            number_of_notes = 0;
             function isKanji(ch) {
                 return (ch >= "\u4e00" && ch <= "\u9faf") ||
                 (ch >= "\u3400" && ch <= "\u4dbf");
             }
+
+            function remove_note(id){
+                var sel = document.querySelector(id);
+                sel.parentNode.removeChild(sel);
+                return true;
+            }
+
+            function change_side(){
+                var sel = document.querySelector(".sidebar");
+                if (sel.classList.contains("left")){
+                    sel.classList.replace("left", "right");
+                }
+                else{
+                    sel.classList.replace("right", "left");
+                }
+            }
+
+            function close_side(){
+                var sel = document.querySelector(".sidebar");
+                sel.style.visibility = "hidden";
+            }
+
+            function add_note(expression="expression", meaning="meaning"){
+                var sidebar = document.querySelector(".sidebar");
+                var selection = document.getSelection().toString();
+                if (selection == ""){
+                    selection = expression;
+                }
+                expression = selection;
+                
+                sidebar.innerHTML += `<div id="note-${number_of_notes}">
+                <span contenteditable="true">${expression}</span> <span class="minus" onclick="remove_note('#note-${number_of_notes}')">➖</span>
+                <br>
+                <span contenteditable="true">${meaning}</span>
+            </div>`;
+            number_of_notes += 1;
+            }
+
+            document.onselectionchange = function () {
+                console.log(document.getSelection().toString())
+            }
+
             var ws = new WebSocket("ws://127.0.0.1:5678/"),
             messages = document.createElement('span');
             ws.onmessage = function (event) {
@@ -20,16 +63,24 @@
                     for (var i = 0; i<event.data.length; i++){
                         console.log("lol");
                         if (isKanji(event.data[i])){
-                            my_data.push("<a class=\"kanji\" href=\"https://jisho.org/search/"+event.data[i]+"\">"+event.data[i]+"</a>");
+                            my_data.push("<span class=\"kanji\" onclick=\"window.open('https://jisho.org/search/"+event.data[i]+"')\">"+event.data[i]+"</span>");
                         } else {
                             my_data.push(event.data[i]);
                         }
                     }
                     my_data = my_data.join("");
                     message.innerHTML = my_data;
+                    message.setAttribute("class", "sentence");
                     messages.replaceWith(message);
             };
             document.body.appendChild(messages);
         </script>
+        <div class="sidebar left">
+            <div class="topbar">
+                <button onclick="add_note()" class="add_button">+</button>
+                <button onclick="change_side()" class="add_button"><b>↔</b></button>
+                <button onclick="close_side()" class="add_button">x</button>
+            </div>
+        </div>
     </body>
 </html>
