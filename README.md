@@ -6,7 +6,7 @@
 Format that is sent is plain-text, I **DON'T** recommend having this enabled when you copy anything important.
 
 Example HTML file that will read and display your clipboard is attached. It's mainly intended for Japanese text.
-![image](https://user-images.githubusercontent.com/7038406/89105638-120ce400-d423-11ea-8e40-5a8e3499d213.png)
+![output](https://user-images.githubusercontent.com/7038406/89133561-22a18500-d51d-11ea-8375-64845b7c9c0c.gif)
 
 Latest release can be found [here](https://github.com/Reyuu/clipboard-serve/releases/latest).
 
