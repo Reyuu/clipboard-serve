@@ -50,7 +50,7 @@
             }
 
             document.onselectionchange = function () {
-                console.log(document.getSelection().toString())
+                //console.log(document.getSelection().toString())
             }
 
             var ws = new WebSocket("ws://127.0.0.1:5678/"),
@@ -59,9 +59,9 @@
                 var messages = document.getElementsByTagName('span')[0];
                     message = document.createElement('span');
                     var my_data = [];
-                    console.log(event.data.length);
+                    //console.log(event.data.length);
                     for (var i = 0; i<event.data.length; i++){
-                        console.log("lol");
+                        //console.log("lol");
                         if (isKanji(event.data[i])){
                             my_data.push("<span class=\"kanji\" onclick=\"window.open('https://jisho.org/search/"+event.data[i]+"')\">"+event.data[i]+"</span>");
                         } else {
