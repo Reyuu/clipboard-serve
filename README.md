@@ -1,5 +1,5 @@
 # Clipboard serve
-![Building](https://github.com/Reyuu/clipboard-serve/workflows/Building/badge.svg)
+![Building](https://github.com/Reyuu/clipboard-serve/workflows/Building/badge.svg) ![](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-2.png)
 
 **Clipboard serve** is a simple utility that will host your clipboard over websocket, which then in turn can be captured by any application that uses websockets (for example your browser). New message will be sent upon the change that occurs in your clipboard with specified wait time between loops.
 
